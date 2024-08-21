@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.springcloudlearing.mapper.BusinessLineMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.springcloudlearing.entity.BusinessLine">
+            <id property="id" column="id" jdbcType="VARCHAR"/>
+            <result property="created_by" column="created_by" jdbcType="VARCHAR"/>
+            <result property="created_date" column="created_date" jdbcType="TIMESTAMP"/>
+            <result property="deleted" column="deleted" jdbcType="TINYINT"/>
+            <result property="last_modified_by" column="last_modified_by" jdbcType="VARCHAR"/>
+            <result property="last_modified_date" column="last_modified_date" jdbcType="TIMESTAMP"/>
+            <result property="version" column="version" jdbcType="INTEGER"/>
+            <result property="business_line_code" column="business_line_code" jdbcType="VARCHAR"/>
+            <result property="series" column="series" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,created_by,created_date,
+        deleted,last_modified_by,last_modified_date,
+        version,business_line_code,series
+    </sql>
+</mapper>
