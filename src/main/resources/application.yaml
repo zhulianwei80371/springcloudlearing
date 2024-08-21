@@ -29,8 +29,8 @@ decorator:
     datasource:
         p6spy:
             #日志格式
-            log-format: "\ntime:%(executionTime) || sql:%(sql)\n"
-             自定义日志类
+            log-format: time:%(executionTime) || sql:%(sql)
+            #自定义日志类
             logging: custom
             custom-appender-class: com.baomidou.mybatisplus.extension.p6spy.StdoutLogger
 

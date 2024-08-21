@@ -23,4 +23,7 @@
         version,email,name,
         balance
     </sql>
+    <update id="updateBalanceByIds">
+    update t_user set balance = balance - #{amount} ${ew.customSqlSegment}
+    </update>
 </mapper>

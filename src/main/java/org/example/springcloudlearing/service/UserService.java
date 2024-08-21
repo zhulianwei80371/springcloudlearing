@@ -1,7 +1,7 @@
 package org.example.springcloudlearing.service;
 
-import org.example.springcloudlearing.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.example.springcloudlearing.entity.User;
 
 /**
 * @author lianweizhu

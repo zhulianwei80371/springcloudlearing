@@ -1,7 +1,7 @@
 package org.example.springcloudlearing.mapper;
 
-import org.example.springcloudlearing.entity.BusinessLine;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.example.springcloudlearing.entity.BusinessLine;
 
 /**
 * @author lianweizhu

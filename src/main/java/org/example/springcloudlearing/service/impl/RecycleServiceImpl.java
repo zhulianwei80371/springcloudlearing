@@ -1,9 +1,9 @@
-package org.example.springcloudlearingservice.impl;
+package org.example.springcloudlearing.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.example.springcloudlearing.entity.Recycle;
-import org.example.springcloudlearing.service.RecycleService;
 import org.example.springcloudlearing.mapper.RecycleMapper;
+import org.example.springcloudlearing.service.RecycleService;
 import org.springframework.stereotype.Service;
 
 /**

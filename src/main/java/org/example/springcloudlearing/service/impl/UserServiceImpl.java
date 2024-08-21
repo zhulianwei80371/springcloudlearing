@@ -1,10 +1,10 @@
-package org.example.springcloudlearingservice.impl;
+package org.example.springcloudlearing.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.extension.toolkit.Db;
 import org.example.springcloudlearing.entity.User;
-import org.example.springcloudlearing.service.UserService;
 import org.example.springcloudlearing.mapper.UserMapper;
+import org.example.springcloudlearing.service.UserService;
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,9 +13,9 @@ import org.springframework.stereotype.Service;
 * @createDate 2024-08-19 15:17:58
 */
 @Service
-public class UserServiceImpl extends ServiceImpl<UserMapper, User>
-    implements UserService{
-    @Override
+public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService{
+
+  @Override
   public void updateBalance(){
       User user = Db.lambdaQuery(User.class).eq(User::getName,"zhulianwei").one();
       Integer id = Integer.valueOf(user.getId());

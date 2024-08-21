@@ -4,10 +4,7 @@ import com.baomidou.mybatisplus.core.incrementer.IdentifierGenerator;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.reflection.MetaObject;
 import org.apache.ibatis.reflection.SystemMetaObject;
-import org.springframework.stereotype.Component;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.concurrent.atomic.AtomicLong;
 
 
@@ -42,7 +39,6 @@ import java.util.concurrent.atomic.AtomicLong;
 //        }
 //}
     @Slf4j
-    @Component
     public class CustomIdGenerator implements IdentifierGenerator {
 
         private final AtomicLong al = new AtomicLong(1);
