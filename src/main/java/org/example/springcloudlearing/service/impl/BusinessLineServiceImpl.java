@@ -1,7 +1,7 @@
 package org.example.springcloudlearing.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.example.springcloudlearing.entity.BusinessLine;
+import org.example.springcloudlearing.entity.vip.BusinessLine;
 import org.example.springcloudlearing.mapper.BusinessLineMapper;
 import org.example.springcloudlearing.service.BusinessLineService;
 import org.springframework.stereotype.Service;

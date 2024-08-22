@@ -1,7 +1,7 @@
 package org.example.springcloudlearing.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import org.example.springcloudlearing.entity.Recycle;
+import org.example.springcloudlearing.entity.vip.Recycle;
 
 /**
 * @author lianweizhu

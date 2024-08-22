@@ -3,8 +3,7 @@ package org.example.springcloudlearing.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
-import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import org.example.springcloudlearing.entity.User;
+import org.example.springcloudlearing.entity.vip.User;
 import org.example.springcloudlearing.mapper.UserMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.example.springcloudlearing.SpringcloudlearingApplication;
@@ -12,7 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.ArrayList;
+import java.math.BigDecimal;
 import java.util.List;
 
 @SpringBootTest(classes = SpringcloudlearingApplication.class)
@@ -26,7 +25,7 @@ class UserMapperTest {
 //        log.info("user id 1:{}",userMapper.selectById("1"));
 
         User one =new User();
-        one.setBalance(1000);
+        one.setBalance(new BigDecimal(1000));
         one.setName("aaazhulianwei00900");
 
         userMapper.insert(one);
@@ -47,7 +46,7 @@ class UserMapperTest {
     @Test
     void updateUser() {
         User one =new User();
-        one.setBalance(981);
+        one.setBalance(new BigDecimal(981));
         one.setName("updateByQueryWrapper");
         QueryWrapper<User> queryWrapper = new QueryWrapper<User>().eq("name","aaazhulianwei00909");
         userMapper.update(one,queryWrapper);
@@ -80,7 +79,7 @@ class UserMapperTest {
         QueryWrapper queryWrapper = new QueryWrapper();
         queryWrapper.eq("name","aaazhulianwei00900");
         User user = new User();
-        user.setBalance(2000);
+        user.setBalance(new BigDecimal(2000));
         userMapper.update(user,queryWrapper);
     }
     @Test
@@ -99,11 +98,10 @@ class UserMapperTest {
 
         List<String> ids = List.of("1f23dccf2a454626b67713dc8a9b4a52","44f5e82ae53f9e5416b17453cf3221ae");
 
-        int amount = 89;
+        BigDecimal amount = new BigDecimal("89");
 
         QueryWrapper<User> wrapper = new QueryWrapper<User>();
         wrapper.in("id",ids);
-
 
         userMapper.updateBalanceByIds(amount,wrapper);
     }

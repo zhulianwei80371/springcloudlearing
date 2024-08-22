@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.example.springcloudlearing.mapper.BusinessLineMapper">
 
-    <resultMap id="BaseResultMap" type="org.example.springcloudlearing.entity.BusinessLine">
+    <resultMap id="BaseResultMap" type="org.example.springcloudlearing.entity.vip.BusinessLine">
             <id property="id" column="id" jdbcType="VARCHAR"/>
             <result property="created_by" column="created_by" jdbcType="VARCHAR"/>
             <result property="created_date" column="created_date" jdbcType="TIMESTAMP"/>

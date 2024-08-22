@@ -1,7 +1,10 @@
 package org.example.springcloudlearing.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import org.example.springcloudlearing.entity.User;
+import org.example.springcloudlearing.entity.vip.User;
+
+import java.math.BigDecimal;
+import java.util.List;
 
 /**
 * @author lianweizhu
@@ -10,5 +13,10 @@ import org.example.springcloudlearing.entity.User;
 */
 public interface UserService extends IService<User> {
 
-    void updateBalance();
+    public void updateBalance(String userId, BigDecimal balance);
+    public void deductBalance(String userId, BigDecimal balance);
+
+    void deductBalanceLamda(String userId, BigDecimal balance);
+
+    List<User> queryUsers(String name, BigDecimal balance, String email);
 }
