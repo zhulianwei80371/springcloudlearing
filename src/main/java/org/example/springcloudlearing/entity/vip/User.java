@@ -82,7 +82,6 @@ public class User   extends  Base {
     private BigDecimal balance;
 
     @TableField(value ="status")
-    @Column(type = MySqlTypeConstant.VARCHAR, comment = "用户状态")
     private EnumValue status;
 
     @Override

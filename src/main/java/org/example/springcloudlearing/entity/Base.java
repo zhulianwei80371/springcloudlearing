@@ -51,11 +51,6 @@ public abstract class Base implements Serializable {
     @ApiParam(hidden = true)
     private Integer version;
 
-    @TableField("txte")
-    @ApiModelProperty("数据版本")
-    @ApiParam(hidden = true)
-    private Integer txte;
-
     public abstract void setProperties();
 
 }
