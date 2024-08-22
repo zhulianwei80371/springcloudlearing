@@ -12,30 +12,30 @@ import java.math.BigDecimal;
 import java.util.List;
 
 /**
-* @author lianweizhu
-* @description 针对表【t_user】的数据库操作Service实现
-* @createDate 2024-08-19 15:17:58
-*/
+ * @author lianweizhu
+ * @description 针对表【t_user】的数据库操作Service实现
+ * @createDate 2024-08-19 15:17:58
+ */
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService{
 
     @Autowired
     private UserMapper userMapper;
 
-  @Override
-  public void updateBalance(String userId, BigDecimal amount){
+    @Override
+    public void updateBalance(String userId, BigDecimal amount){
 
-      User currentUser = this.getById(userId);
-      if(currentUser == null ||  currentUser.getBalance().compareTo(amount)<0){
-          throw new RuntimeException("用户不存在或余额不足");
-      }
-      //      // 更新余额 = 余额 - xx
-      currentUser.setBalance(currentUser.getBalance().subtract(amount));
-      LambdaQueryWrapper<User> wrapper = new LambdaQueryWrapper<>();
-      wrapper.eq(User::getId,userId);
+        User currentUser = this.getById(userId);
+        if(currentUser == null ||  currentUser.getBalance().compareTo(amount)<0){
+            throw new RuntimeException("用户不存在或余额不足");
+        }
+        //      // 更新余额 = 余额 - xx
+        currentUser.setBalance(currentUser.getBalance().subtract(amount));
+        LambdaQueryWrapper<User> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(User::getId,userId);
 //      userMapper.updateBalanceByIds(amount,wrapper);
 
-  }
+    }
 
     @Override
     public void deductBalance(String userId, BigDecimal balance){
@@ -65,7 +65,3 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         return  lambdaQuery().like(User::getName,name).gt(User::getBalance,balance).like(User::getEmail,email).list();
     }
 }
-
-
-
-

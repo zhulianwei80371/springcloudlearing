@@ -7,10 +7,10 @@ import java.math.BigDecimal;
 import java.util.List;
 
 /**
-* @author lianweizhu
-* @description 针对表【t_user】的数据库操作Service
-* @createDate 2024-08-19 15:17:58
-*/
+ * @author lianweizhu
+ * @description 针对表【t_user】的数据库操作Service
+ * @createDate 2024-08-19 15:17:58
+ */
 public interface UserService extends IService<User> {
 
     public void updateBalance(String userId, BigDecimal balance);

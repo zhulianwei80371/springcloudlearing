@@ -4,13 +4,13 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.example.springcloudlearing.mapper.UserMapper">
 
-    <resultMap id="BaseResultMap" type="org.example.springcloudlearing.entity.vip.User">
+    <resultMap id="BaseResultMap" type="org.example.springcloudlearing.entity.User">
             <id property="id" column="id" jdbcType="VARCHAR"/>
-            <result property="createdBy" column="created_by" jdbcType="VARCHAR"/>
-            <result property="createdDate" column="created_date" jdbcType="TIMESTAMP"/>
-            <result property="deleted" column="deleted" jdbcType="BOOLEAN"/>
-            <result property="lastModifiedBy" column="last_modified_by" jdbcType="VARCHAR"/>
-            <result property="lastModifiedDate" column="last_modified_date" jdbcType="TIMESTAMP"/>
+            <result property="created_by" column="created_by" jdbcType="VARCHAR"/>
+            <result property="created_date" column="created_date" jdbcType="TIMESTAMP"/>
+            <result property="deleted" column="deleted" jdbcType="TINYINT"/>
+            <result property="last_modified_by" column="last_modified_by" jdbcType="VARCHAR"/>
+            <result property="last_modified_date" column="last_modified_date" jdbcType="TIMESTAMP"/>
             <result property="version" column="version" jdbcType="INTEGER"/>
             <result property="email" column="email" jdbcType="VARCHAR"/>
             <result property="name" column="name" jdbcType="VARCHAR"/>
@@ -21,9 +21,10 @@
         id,created_by,created_date,
         deleted,last_modified_by,last_modified_date,
         version,email,name,
-        balance,status
+        balance
     </sql>
+
     <update id="updateBalanceByIds">
-    update t_user set balance = balance - #{amount}  ${ew.customSqlSegment}
+        update t_user set balance = balance - #{amount}  ${ew.customSqlSegment}
     </update>
 </mapper>
