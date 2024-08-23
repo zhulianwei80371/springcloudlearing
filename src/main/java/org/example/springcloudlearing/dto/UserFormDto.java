@@ -1,6 +1,8 @@
 package org.example.springcloudlearing.dto;
 
+import com.baomidou.mybatisplus.annotation.EnumValue;
 import lombok.Data;
+import org.example.springcloudlearing.enums.vip.UserStatus;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -17,4 +19,5 @@ public class UserFormDto {
     private String email;
     private String name;
     private BigDecimal balance;
+    private UserStatus status;
 }

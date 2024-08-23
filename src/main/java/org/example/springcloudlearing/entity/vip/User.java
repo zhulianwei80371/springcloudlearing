@@ -82,7 +82,7 @@ public class User   extends  Base {
     private BigDecimal balance;
 
     @TableField(value ="status")
-    private EnumValue status;
+    private UserStatus status;
 
     @Override
     public void setProperties() {
