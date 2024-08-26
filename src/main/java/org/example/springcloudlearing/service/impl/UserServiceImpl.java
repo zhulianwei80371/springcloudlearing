@@ -7,7 +7,9 @@ import org.example.springcloudlearing.mapper.UserMapper;
 import org.example.springcloudlearing.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import javax.sql.DataSource;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -22,7 +24,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     @Autowired
     private UserMapper userMapper;
 
+    @Autowired
+    private DataSource dataSource;
+
     @Override
+    @Transactional
     public void updateBalance(String userId, BigDecimal amount){
 
         User currentUser = this.getById(userId);
