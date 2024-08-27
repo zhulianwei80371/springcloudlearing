@@ -82,6 +82,8 @@ public class User   extends  Base {
     private BigDecimal balance;
 
     @TableField(value ="status")
+//    类型的枚举是没法作为表内字段的转换类型
+//    修改Resource数据实体的Column使其指定为MySqlTypeConstant的类型
     @Column(type = MySqlTypeConstant.VARCHAR, comment = "用户状态")
     private UserStatus status;
 
